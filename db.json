@@ -1,0 +1,19 @@
+{
+  "test": [
+    "asd"
+  ],
+  "meal": [
+    {
+      "id": "2a0d33b9-9c35-4683-a201-a254ec8dfff3",
+      "name": "John Doe",
+      "startDate": "2023-11-01",
+      "endDate": "2023-11-03"
+    },
+    {
+      "id": "bf95fa0e-8436-4bee-97cf-8fd11480caba",
+      "name": "Alice Smith",
+      "startDate": "2023-11-02",
+      "endDate": "2023-11-03"
+    }
+  ]
+}

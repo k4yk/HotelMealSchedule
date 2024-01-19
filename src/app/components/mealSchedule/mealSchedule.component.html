@@ -1,0 +1,49 @@
+<div class="layout-column align-items-center justify-content-center">
+  <section class="content layout-row align-items-center justify-content-center mt-50">
+    <table class="card content">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Breakfast</th>
+          <th>Lunch</th>
+          <th>Dinner</th>
+        </tr>
+      </thead>
+      <tbody data-test-id="meal-schedule">
+        <tr style="text-align: center;" *ngIf="isLoading$ | async">
+          <td colspan="4">
+            <img style="margin: 0 auto;" height="25px" width="25px" src="../../../assets/loading_indicator.gif"
+              alt="Loading..." />
+          </td>
+        </tr>
+        <ng-container *ngIf="!(isLoading$ | async)">
+          <tr *ngFor="let guest of guestList$ | async; let idx = index" class="slide-up-fade-in">
+            <!-- TODO: Use below to render row for each object-->
+            <td data-test-id="date">{{guest.date}}</td>
+            <td>
+              <ul *ngFor="let breakfast of guest.breakfast" data-test-id="breakfast-list">
+                <li [style.color]="guest.isAnyoneFoodSensitive ? 'red' : 'black'">
+                  {{breakfast}}
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let lunch of guest.lunch" data-test-id="lunch-list">
+                <li [style.color]="guest.isAnyoneFoodSensitive ? 'red' : 'black'">
+                  {{lunch}}
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let dinner of guest.dinner" data-test-id="dinner-list">
+                <li [style.color]="guest.isAnyoneFoodSensitive ? 'red' : 'black'">
+                  {{dinner}}
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </section>
+</div>

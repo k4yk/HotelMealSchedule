@@ -1,0 +1,47 @@
+<div class="layout-column">
+  <form class="contact-form">
+    <div class="layout-row align-items-center justify-content-center mt-50">
+      <input
+        #guestNameReference
+        name="name"
+        class="mr-30"
+        type="text"
+        data-test-id="name-input"
+        required
+        placeholder="Guest Name"
+        [(ngModel)]="name"
+      />
+      <input
+        #startDateReference
+        name="startDate"
+        class="mr-30"
+        type="date"
+        data-test-id="start-date"
+        required
+        placeholder="Start Date"
+        [(ngModel)]="startDate"
+      />
+      <input
+        #endDateReference
+        name="endDate"
+        class="mr-30"
+        type="date"
+        data-test-id="end-date"
+        required
+        placeholder="End Date"
+        [(ngModel)]="endDate"
+      />
+      <input
+        type="checkbox"
+        class="mr-30"
+        name="foodSensitive"
+        data-test-id="food-sensitive"
+        required
+        [(ngModel)]="isFoodSensitive"
+      />
+    </div>
+    <div class="layout-row align-items-center justify-content-center mt-50">
+      <button [disabled]="(isLoading$ | async)" (click)="saveData()" data-test-id="submit-button" class="w-30">Add to Menu</button>
+    </div>
+  </form>
+</div>
