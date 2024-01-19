@@ -1,7 +1,9 @@
+import { Guest } from "./guest.interface";
+
 export interface GuestList {
     date: string;
-    breakfast: string[];
-    lunch: string[];
-    dinner: string[];
+    breakfast: Guest[];
+    lunch: Guest[];
+    dinner: Guest[];
     isAnyoneFoodSensitive: boolean;
 }

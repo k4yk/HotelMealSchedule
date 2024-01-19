@@ -23,21 +23,21 @@
             <td>
               <ul *ngFor="let breakfast of guest.breakfast" data-test-id="breakfast-list">
                 <li [style.color]="guest.isAnyoneFoodSensitive ? 'red' : 'black'">
-                  {{breakfast}}
+                  {{breakfast.name}}
                 </li>
               </ul>
             </td>
             <td>
               <ul *ngFor="let lunch of guest.lunch" data-test-id="lunch-list">
                 <li [style.color]="guest.isAnyoneFoodSensitive ? 'red' : 'black'">
-                  {{lunch}}
+                  {{lunch.name}}
                 </li>
               </ul>
             </td>
             <td>
               <ul *ngFor="let dinner of guest.dinner" data-test-id="dinner-list">
                 <li [style.color]="guest.isAnyoneFoodSensitive ? 'red' : 'black'">
-                  {{dinner}}
+                  {{dinner.name}}
                 </li>
               </ul>
             </td>

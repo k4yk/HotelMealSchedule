@@ -14,6 +14,20 @@
       "name": "Alice Smith",
       "startDate": "2023-11-02",
       "endDate": "2023-11-03"
+    },
+    {
+      "name": "Teszt",
+      "startDate": "2023-11-03",
+      "endDate": "2023-11-06",
+      "isFoodSensitive": true,
+      "id": "Lh_cNWI"
+    },
+    {
+      "name": "Teszt2",
+      "startDate": "2023-11-04",
+      "endDate": "2023-11-08",
+      "isFoodSensitive": false,
+      "id": "dlsyM4f"
     }
   ]
 }

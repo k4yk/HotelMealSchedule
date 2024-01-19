@@ -51,7 +51,6 @@ export class MealService {
 
   public createGuestListFromData(jsonData: any): GuestList[] {
     const result: GuestList[] = [];
-    const isAnyoneFoodSensitive = false; //todo: fix this
     jsonData.forEach((guest: Guest) => {
       const startDate = new Date(guest.startDate);
       const endDate = new Date(guest.endDate);
@@ -59,15 +58,14 @@ export class MealService {
       for (let d = startDate; d <= endDate; d.setDate(d.getDate() + 1)) {
         const dateString = d.toISOString().split("T")[0];
         const existingResult = result.find((res) => res.date === dateString);
-        const name = guest.name;
   
         if (existingResult) {
-          existingResult.breakfast.push(name);
-          existingResult.lunch.push(name);
-          existingResult.dinner.push(name);
-          existingResult.isAnyoneFoodSensitive = isAnyoneFoodSensitive;
+          existingResult.breakfast.push(guest);
+          existingResult.lunch.push(guest);
+          existingResult.dinner.push(guest);
+          existingResult.isAnyoneFoodSensitive = existingResult.breakfast.some(i => i.isFoodSensitive);
         } else {
-          result.push({ date: dateString, breakfast: [name], lunch: [name], dinner: [name], isAnyoneFoodSensitive: isAnyoneFoodSensitive });
+          result.push({ date: dateString, breakfast: [guest], lunch: [guest], dinner: [guest], isAnyoneFoodSensitive: guest.isFoodSensitive });
         }
       }
     });
